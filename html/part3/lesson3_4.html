@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>输入两个数字，比较大小</title>
+	<style type="text/css">
+		body{
+			text-align: center;
+			font:12px/1.5 Tahoma;
+		}
+		#input{
+			width: 50px;
+			background: #f0f0f0;
+			border:1px solid #ccc;
+		}
+		#button{
+			margin: 0 5px;
+		}
+		strong{
+			padding: 0 5px;
+		}
+		span{
+			color: red;
+			font-weight: 900;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oInput=document.getElementsByTagName("input");
+			var oResult=document.getElementsByTagName("span")[0];
+			for(var i=0;i<oInput.length-1;i++){
+				oInput[i].onkeyup=function(){
+					this.value= this.value.replace(/[^\d]/,"");
+				}
+			}
+			oInput[2].onclick=function(){
+				if(oInput[0].value=="" | oInput[1].value=="")
+					alert('请输入数字！');
+				oResult.innerHTML=Math.max(oInput[0].value,oInput[1].value)
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="input">
+	<strong>vs</strong>
+	<input type="text" id="input">
+	<input type="button" value="较大的数字是：" id="button">
+	<span>?</span>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单一按钮显示/隐藏</title>
+	<style type="text/css">
+		body{
+			font:12px/1.5 Tahoma;
+		}
+		ul,li,h2{
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+		a:link,a:visited{
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: underline;
+			background: #fff;
+		}
+		a{
+			display: block;
+			color: #6b7980;
+			background: #e9edf2;
+			padding: 5px;
+		}
+		#outer{
+			width: 200px;
+			margin: 10px auto;
+			border: 1px solid #aaa;
+		}
+		h2{
+			border: 1px solid #fff;
+			background: #ccc;
+			color: #57646e;
+			cursor: pointer;
+			font-size: 14px;
+			height: 30px;
+			line-height: 30px;
+			font-weight: 400;
+			padding-left: 10px;
+			background: #ced3d7 url(images/ico.gif) 180px 15px no-repeat;
+			border-color: #fff;
+		}
+		h2.open{
+			background-position: 180px -12px;
+		}
+		ul{
+			display: block;
+			line-height: 25px;
+		}
+		ul li a{
+			height: 25px;
+			line-height: 25px;
+			padding-left: 10px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oH2= document.getElementsByTagName("h2")[0];
+			var oUl=document.getElementsByTagName("ul")[0];
+			oH2.onclick=function(){
+				oUl.style.display= (oUl.style.display=="block")? "none":"block";
+				oH2.className= (oUl.style.display=="block")? "":"open";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="outer">
+		<h2>最佳国语专辑入围...</h2>
+		<ul>
+			<li><a href="#">Play 呸 - 蔡依林</a></li>
+			<li><a href="#">米。闪 - 陈奕迅</a></li>
+			<li><a href="#">哎呦，不错哦 - 周杰伦</a></li>
+			<li><a href="#">Waking up dreaming - 张学友</a></li>
+			<li><a href="#">寻人启事 - 徐佳莹</a></li>
+			<li><a href="#">不散，不见 - 莫文蔚</a></li>
+		</ul>
+	</div>
+</body>
+</html>

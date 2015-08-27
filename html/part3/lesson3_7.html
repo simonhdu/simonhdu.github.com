@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页计算器</title>
+	<style type="text/css">
+		body{
+			font:800 25px/1.5 arial;
+		}
+		body,div,ul,li,input{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			color: #fff;
+			text-decoration: none;
+		}
+		#calculator{
+			position: relative;
+			width: 300px;
+			background: gray;
+			margin: 50px auto;
+			border: 3px solid #000;
+		}
+		#calculator .formula{
+			display: block;
+			border: 0;
+			width: 290px;
+			height: 20px;
+			text-align: right;
+			background: #5af;
+			padding: 0 5px;
+		}
+		#calculator .result{
+			display: block;
+			border: 0;
+			width: 290px;
+			height: 83px;
+			text-align: right;
+			font: 800 50px arial;
+			background: #5ec;
+			padding: 0 5px;
+		}
+		#calculator ul{
+			position: relative;
+			margin-top: 5px;
+			overflow: hidden;
+		}
+		#calculator ul li{
+			float: left;
+			width: 62px;
+			height: 41px;
+			border:1px solid #ccc;
+			border-radius: 3px;
+			margin: 5px;
+			background: #000;
+		}
+		#calculator ul li a{
+			display: block;
+			width: 62px;
+			height: 41px;
+			line-height: 41px;
+			text-align: center;
+		}
+		#calculator ul li a:hover{
+			background: red;
+		}
+		#calculator ul li.btn-1 a{
+			background: orange;
+		}
+		#calculator ul li.btn-1 a:hover{
+			background: yellow;
+		}
+		#calculator ul li.btn-2{
+			position: absolute;
+			top:159px;
+			right: 4px;
+			height: 95px;
+			vertical-align: middle;
+		}
+		#calculator ul li.btn-2 a{
+			height: 100%;
+			line-height: 95px;
+			background: green;
+		}
+		#calculator ul li.btn-2 a:hover{
+			background: lightgreen;
+		}
+		#calculator ul li.btn-3{
+			width: 136px;
+		}
+		#calculator ul li.btn-3 a{
+			width: 100%;
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oCalc = document.getElementById("calculator");
+			var aA = oCalc.getElementsByTagName("a");
+			var oResult = oCalc.getElementsByTagName("input")[1];
+			var oFormula = oCalc.getElementsByTagName("input")[0];
+			var s = false;
+			var i = 0;
+
+			for (i = 0; i < aA.length; i++){
+				aA[i].onclick = function ()
+				{
+					switch(this.innerHTML)
+					{
+						case "c":
+							oResult.value =  0;
+							oFormula.value = "";
+							break;
+						case "%":
+							count("%")
+							break;
+						case "÷":
+							count("/")
+							break;
+						case "×":
+							count("*")
+							break;
+						case "-":
+							count("-")
+							break;
+						case "+":
+							count("+")
+							break;
+						case "=":
+							s || (oFormula.value += oResult.value);
+							oResult.value = eval(oFormula.value.replace(/\%\/\*\-\+/,''));
+							oResult.value = oResult.value.substr(0,10).replace("NaN",0);
+							s = true;
+							break;
+						case ".":
+							if(oResult.value.search(/[\.\%\/\*\-\+]/) != -1)
+							break;
+						default:
+							s && (oResult.value = 0, oFormula.value = "", s = false);
+							oResult.value.length < 10 && (oResult.value = (oResult.value + this.innerHTML).replace(/^[0\%\/\*\-\+](\d)/,"$1"));
+					}
+				}
+			}
+
+			function count(a)
+			{
+
+				if(s)
+				{
+					oFormula.value = oResult.value + a;
+					oResult.value = a;
+					s = false;
+				}
+				else
+				{
+					/[\%\/\*\-\+]$/.test(oResult.value) || (oFormula.value += oResult.value);
+					oResult.value = a;
+					/[\%\/\*\-\+]$/.test(oFormula.value) || (oFormula.value += oResult.value);
+					oFormula.value = oFormula.value.slice(-1) != a ? oFormula.value.replace(/.$/,a) : oFormula.value
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="calculator">
+		<input type="text" class="formula" readonly="readonly" value="">
+		<input type="text" class="result"  readonly="readonly" value="0" maxlength="8">
+		<ul>
+			<li class="btn-1"><a href="javascript:void(0)">c</a></li>
+			<li class="btn-1"><a href="javascript:void(0)">%</a></li>
+			<li class="btn-1"><a href="javascript:void(0)">÷</a></li>
+			<li class="btn-1"><a href="javascript:void(0)">*</a></li>
+			<li><a href="javascript:void(0)">7</a></li>
+      <li><a href="javascript:void(0)">8</a></li>
+      <li><a href="javascript:void(0)">9</a></li>
+      <li class="btn-1"><a href="javascript:void(0)">-</a></li>
+      <li><a href="javascript:void(0)">4</a></li>
+      <li><a href="javascript:void(0)">5</a></li>
+      <li><a href="javascript:void(0)">6</a></li>
+      <li class="btn-1"><a href="javascript:void(0)">+</a></li>
+      <li><a href="javascript:void(0)">1</a></li>
+      <li><a href="javascript:void(0)">2</a></li>
+      <li><a href="javascript:void(0)">3</a></li>
+      <li class="btn-2"><a href="javascript:void(0)">=</a></li>
+      <li class="btn-3"><a href="javascript:void(0)">0</a></li>
+      <li><a href="javascript:void(0)">.</a></li>
+		</ul>
+	</div>
+</body>
+</html>

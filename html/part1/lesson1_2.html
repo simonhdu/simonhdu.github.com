@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页换肤</title>
+	<style type="text/css">
+		body,ul,li{
+			margin: 0;
+			padding: 0;
+		}
+		html{
+			height: 100%;
+		}
+		body{
+			font:12px/1.5 Tahoma;
+		}
+		li{
+			list-style-type: none;
+		}
+		a:link,a:visited{
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: underline;
+		}	
+		#outer{
+			width: 500px;
+			margin: 0 auto;
+			overflow: hidden;
+			zoom:1;
+		}
+		#skin,#nav{
+			overflow: hidden;
+			zoom:1;
+		}
+		#skin{
+			margin: 10px 0;
+		}
+		#skin li{
+			float: left;
+			width: 6px;
+			height: 6px;
+			cursor: pointer;
+			overflow: hidden;
+			text-indent: -9999px;
+			margin-right: 10px;
+			border-width: 4px;
+			border-style: solid;
+		}
+		#skin .current{
+			background: white;
+		}
+		#red{
+			background: red;
+			border-color: red;
+		}
+		#green{
+			background: green;
+			border-color: green;
+		}
+		#black{
+			background: black;
+			border-color: black;
+		}
+		#nav{
+			border: 1px solid white;
+		}
+		#nav li{
+			float: left;
+			width: 82px;
+			line-height: 25px;
+			text-align: center;
+			border-right: 1px solid white;
+		}
+		#nav .last{
+			width: 83px;
+			border-right-width: 0px;
+		}
+		#nav li a{
+			color: white;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="styles/green.css">
+	<script type="text/javascript">
+		window.onload=function(){
+			var oLink = document.getElementsByTagName("link")[0];
+			var oSkin = document.getElementById("skin").getElementsByTagName("li");
+
+			for(var i=0;i<oSkin.length;i++)
+			{
+				oSkin[i].onclick=function(){
+					for(var p in oSkin)
+						oSkin[p].className="";
+					this.className="current";
+					oLink['href']="styles/"+this.id+".css";
+				}
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div id="outer">
+		<ul id="skin">
+			<li id="red" title="红色"></li>
+			<li id="green" title="绿色" class="current"></li>
+			<li id="black" title="黑色"></li>
+		</ul>
+		<ul id="nav">
+			<li><a href="#">新闻</a></li>
+			<li><a href="#">娱乐</a></li>
+			<li><a href="#">体育</a></li>
+			<li><a href="#">电影</a></li>
+			<li><a href="#">音乐</a></li>
+			<li class="last"><a href="#">旅游</a></li>
+		</ul>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数接收参数并弹出</title>
+	<style type="text/css">
+		body{
+			text-align: center;
+			font:12px/1.5 Tahoma;
+		}
+		input{
+			padding: 3px;
+		}
+		button{
+			cursor: pointer;
+		}
+
+	</style>
+	<script type="text/javascript">
+		var skip=function(a,b){
+			alert(a.value);
+			alert(b.value);
+		}
+
+		window.onload=function(){
+			var oInput=document.getElementsByTagName("input");
+			var oBtn=document.getElementsByTagName("button")[0];
+			oBtn.onclick=function(){
+				skip(oInput[0],oInput[1]);
+			}
+		}
+	</script>
+</head>
+<body>
+	<p>
+		<input type="text" value="浙江省">
+	</p>
+	<p>
+		<input type="text" value="杭州市">
+	</p>
+	<button>传参</button>
+</body>
+</html>

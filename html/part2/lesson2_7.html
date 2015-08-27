@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简易选项卡</title>
+	<style type="text/css">
+		ul,li{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			font: 12px/1.5 Tahoma;
+		}
+		#outer{
+			width: 450px;
+			margin: 10px auto;
+		}
+		#tab{
+			background: #000;
+			border:1px solid #000;
+			overflow: hidden;   //重要！
+		}
+		#tab li{
+			float: left;
+			color: #fff;
+			height: 30px;
+			line-height: 30px;
+			list-style-type: none;
+			cursor: pointer;
+			padding: 0 20px;
+		}
+		#tab li.current{
+			color: #000;
+			background: #ccc;
+		}
+		#content{
+			border:1px solid #000;
+			border-top-width: 0px;
+		}
+		#content ul{
+			display:none;
+			line-height: 25px;
+			margin: 0 30px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oTabList=document.getElementById("tab").getElementsByTagName("li");
+			var oContentList=document.getElementById("content").getElementsByTagName("ul");
+
+			for(var i=0;i<oTabList.length;i++){
+				oTabList[i].index=i;
+				oTabList[i].onmouseover=function(){
+					for(var n in oTabList)
+						oTabList[n].className="";
+					this.className="current";
+					for(var n=0;n<oContentList.length;n++)
+						oContentList[n].style.display="none";
+					oContentList[this.index].style.display="block";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="outer">
+		<ul id="tab">
+			<li class="current">江苏</li>
+			<li>浙江</li>
+			<li>上海</li>
+		</ul>
+		<div id="content">
+			<ul style="display:block">
+				<li>南京</li>
+				<li>苏州</li>
+				<li>徐州</li>
+				<li>无锡</li>
+				<li>扬州</li>
+				<li>镇江</li>
+				<li>南通</li>
+				<li>常州</li>
+				<li>淮安</li>
+				<li>连云港</li>
+				<li>泰州</li>
+				<li>盐城</li>
+				<li>宿迁</li>
+			</ul>
+			<ul>
+				<li>杭州</li>
+				<li>宁波</li>
+				<li>金华</li>
+				<li>舟山</li>
+				<li>温州</li>
+				<li>绍兴</li>
+				<li>嘉兴</li>
+				<li>湖州</li>
+				<li>台州</li>
+			</ul>
+			<ul>
+				<li>静安</li>
+				<li>浦东</li>
+				<li>长宁</li>
+				<li>卢湾</li>
+				<li>金山</li>
+				<li>崇明</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

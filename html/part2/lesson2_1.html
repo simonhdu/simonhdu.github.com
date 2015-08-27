@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度输入法</title>
+	<style type="text/css">
+		body{
+			font: 12px/1.5 Tahoma;
+		}
+		body,ul,li{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style-type:none;
+		}
+		button{
+			cursor: pointer;
+		}
+		#outer{
+			width: 70px;
+			margin: 10px auto;
+		}
+		ul{
+			display: none;
+			border: 1px solid #9a99ff;
+			margin-top: 5px;
+			background: #fff;
+		}
+		ul li{
+			cursor: pointer;
+			line-height: 24px;
+		}
+		ul li a{
+			color: #00c;
+			padding: 0 5px;
+			display: block;
+			text-decoration: none;
+		}
+		ul li a:hover{
+			background: #d9e1f6;
+		}
+		ul .last{
+			border-top:1px solid #9a99ff;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn= document.getElementsByTagName("button")[0];
+			var oUl=document.getElementsByTagName("ul")[0];
+			var oClose=document.getElementById("close");
+
+			oBtn.onclick=function(){
+				oUl.style.display = (oUl.style.display=="block") ? "none":"block";
+			}
+			oClose.onclick=function(){
+				oUl.style.display="none";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="outer">
+		<button>输入法</button>
+		<ul>
+			<li><a href="#">手写</a></li>
+			<li><a href="#">拼音</a></li>
+			<li class="last" id="close"><a href="#">关闭</a></li>
+		</ul>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简易网页时钟</title>
+	<style type="text/css">
+		body{
+			font:20px/1.5 Tahoma;
+		}
+		body,div,input{
+			margin: 0;
+			padding: 0;
+		}
+		#clock{
+			width: 300px;
+			background: #000;
+			margin: 20px auto;
+			padding: 20px;
+			text-align: center;
+		}
+		span{
+			color: #000;
+			width: 80px;
+			border: 2px solid #ccc;
+			background: #fff;
+			padding: 0 10px;
+		}
+		strong{
+			color: #fff;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function ()
+		{
+			var oClock = document.getElementById("clock");	
+			var aSpan = oClock.getElementsByTagName("span");
+				
+			setInterval(getTimes, 1000);
+			getTimes();
+			function getTimes ()
+			{
+				var oDate = new Date();
+				var aDate = [oDate.getHours(), oDate.getMinutes(), oDate.getSeconds()];
+				for (var i in aDate) aSpan[i].innerHTML = format(aDate[i])
+			}
+			function format(a)
+			{
+				return a.toString().replace(/^(\d)$/, "0$1")	
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="clock">
+		<span>0</span>
+		<strong>点</strong>
+		<span>0</span>
+		<strong>分</strong>
+		<span>0</span>
+		<strong>秒</strong>
+	</div>
+</body>
+</html>
