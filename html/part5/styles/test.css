@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.clearfix:after{
+  content: "";
+  clear: both;
+  height: 0;
+  display: block;
+  visibility: hidden;
+}
+.layout{
+  background: yellow;
+}
+.left{
+  width: 20%;
+  height: 200px;
+  float: left;
+  background: red;
+}
+.right{
+  width: 30%;
+  height: 160px;
+  float: right;
+  background: pink;
+}
+#div1{
+  background: orange;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100px;
+}
+
+.table tr:nth-child(2n-1){
+  background: white;
+}
+.table tr:nth-child(2n){
+  background: red;
+}
+.table tr:hover{
+  background: blue;
+}
