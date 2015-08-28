@@ -9,6 +9,16 @@ window.onload = function ()
   var bOrder = true;
   var aTmp = [];
   var aBtn = null;
+  var oSearchText = document.getElementById("search_text");
+  //搜索框获取焦点，默认值清零
+  oSearchText.onfocus=function(){
+    if(this.value == this.defaultValue)
+      this.value="";
+  }
+  oSearchText.onblur=function(){
+    this.value = (this.value == "" ? this.defaultValue : this.value);
+  }
+
 
   //生成数字按钮
   for (i = 0; i < aImg.length; i++) aTmp.push("<li>" + (i + 1) + "</li>");
