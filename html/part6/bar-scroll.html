@@ -1,0 +1,291 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>滚动菜单标记</title>
+    <style type="text/css">
+        *{ margin:0; padding:0;}
+        body{font:12px/1.5 arial;background: #fff;}
+        ul,li{list-style: none;}
+        a{ color:#666; text-decoration:none;}
+        a:hover{ color:#f80;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        .clearfix{display:inline-block;}
+        .clearfix{display:block;}
+        .content{ width:980px;margin: 0 auto;}
+        .sidebar{ position:fixed; float:left; width:240px; z-index:5;}
+        .list{background: #fcfcfc; border:1px solid #c6c6c6;}
+        .list li{ padding-left:10px; height:40px; line-height:40px;cursor: pointer;border-bottom: 1px solid #ebebeb;}
+        .list li.on{ position:relative; padding:2px 0 2px 10px; margin:-2px 0 2px -1px;background: #70a9d9;}
+        .list li.on i{ position:absolute; width:0; height:0;top: 0; right:-15px; overflow:hidden; display:block;border-color:transparent #70A9D9;border-style:solid;border-width:22px 0 22px 15px;}
+        .list li.on a{color: #fff; font-weight:bold;}
+        .list li a{ font-size:14px;}
+        .main{ float:right; width:728px; border:1px solid #c6c6c6;}
+        .main h1{ height:57px; line-height:57px; font-size:27px; color:#333; text-align:center;box-shadow:0 -1px 0 #fff inset;border-bottom: 1px solid #c6c6c6; background:-webkit-linear-gradient(center top , #FFFFFF, #F1F1F1) repeat 0 0;background:-moz-linear-gradient(center top , #FFFFFF, #F1F1F1) repeat 0 0;}
+        .report-img-box{ position:relative;border-bottom: 1px solid #ccc;}
+        .report-desc3{ padding:20px 50px; line-height:20px; height:100%; color:#666; border:20px solid #fff;background: #f5f5f5;}
+        .report-desc3 h4{ font-size:22px; color:#333;}
+        .report-desc3 li{ padding:20px 0; clear:both;}
+        .report-desc3 dt{ position:relative; width:90px; text-align:center; line-height:22px; font-size:18px; font-family:微软雅黑; font-weight:normal; float:left;color: #fff;}
+        .report-desc3 dt i{ position:absolute; width:0;right: 0; overflow:hidden; height:0;bottom: 0; border-width:20px 20px 0 0;border-style:solid;border-color:transparent #F5F5F5;}
+        .report-desc3 dd{ float:left; width:460px; padding:10px 0 10px 20px;}
+        .main .report-img-box{ position:relative; width:728px; padding:20px 0 30px; height:405px; overflow:hidden;border-bottom: 1px solid #ccc;}
+        .main .report-img-box img { clip:rect(100px, 728px, 475px, 0px); position:absolute; top:-40px; width:728px; }
+        .report-img-box h4{ position:absolute; top:30px; left:18px; font-size:18px; font-weight:bold;}
+        .report-desc22,.report-desc23{ position:absolute; padding:0 70px; line-height:20px; color:#666;background: #fff;}
+        .report-desc22 dt{ font-style:14; line-height:26px; margin-top:10px; font-weight:bold;}
+        .report-desc23 li{ padding-bottom:10px;}
+    </style>
+</head>
+<body>
+<!--<div id="test" style="position: fixed;left: 10px;top: 10px;width: 80px;height: 200px;overflow-y:scroll;border: 1px solid #ccc;"></div>-->
+<section class="content clearfix">
+    <aside class="sidebar">
+        <ul id="ul" class="list">
+            <li id="zzReportMenu1"><a href="javascript:void(0)">> 2012中国网站发展情况</a><em></em></li>
+            <li id="zzReportMenu2"><a href="javascript:void(0)">> 中国优质网站发展情况</a><em></em></li>
+            <li id="zzReportMenu3"><a href="javascript:void(0)">> 中国低质网站泛滥</a><em></em></li>
+            <li id="zzReportMenu4"><a href="javascript:void(0)">> 百度站长平台2013年星火计划</a><em></em></li>
+            <li id="zzReportMenu5"><a href="javascript:void(0)">> 2013年网站运营趋势分析</a><em></em></li>
+            <li id="zzReportMenu6"><a href="javascript:void(0)">> 2013年网站运营方向几点建议</a><em></em></li>
+        </ul>
+    </aside>
+    <article class="main">
+        <h1>2013年中国网站运营发展趋势报告</h1>
+        <dl id="dllist" class="dllist">
+            <div style="height:auto; padding:0;" class="report-img-box">
+                <div class="report-desc3 clearfix">
+                    <h4>主要结论</h4>
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt style="background-color:#f00000; padding:27px 0;">中国网站<br />
+                                    发展概况<em></em></dt>
+                                <dd>2012年，PC端网站增速较大，数量较2011年增加29%；PC无线化速度加快，12年PC网站无线化比例达到40%。<br />
+                                    中国互联网的生态环境较差，优质站点仅占1/4，低质站点越加泛滥，对中文互联网网站的运营发展产生的负面影响已越来越严重。</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt style="background-color:#2878de;padding:57px 0;">优质/低质<br />
+                                    网站情况<em></em></dt>
+                                <dd>2012年优质资源中社交网络类及商品类资源占比最高，且增速明显。<br />
+                                    2012年，商品供求类资源、高质量视频资源及图片资源的需求有明显增长。<br />
+                                    低质网站泛滥,且以采集站数量较为集中，占比约40%，这类网站利用采集方式罗列大量同质内容，并出现文不对题、采集不全、诱导用户点击等多种现象，加以泛滥的弹窗、广告、病毒等严重影响用户的访问安全及阅读使用体验。<br />
+                                    中文互联网网站安全问题较为严峻，其中65%的网站存在不同程度的系统漏洞，仅35%的网站处于安全状态。</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt style="background-color:#8c8c8c;padding:65px 0;">2013年<br />
+                                    站长平台<br />
+                                    星火计划<em></em></dt>
+                                <dd><strong>原创星火计划</strong><br />
+                                    2013年百度网页搜索与百度站长平台会重点扶持原创网站，建设原创联盟，给予原创、优质站点更高的发展空间。<br />
+                                    <strong>网站成长星火计划</strong><br />
+                                    2013年百度站长平台计划对原创联盟中的站点开放高级站长工具，给予这些网站更好的发展环境。<br />
+                                    <strong>互联网协议星火计划</strong><br />
+                                    2013年百度站长平台会挖掘更多站长可使用的协议标签，让百度搜索引擎与网站之间的关系达到更加友好的状态。</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <dt id="zzReportPart1" class="report-part"> <img src="http://zhanzhang.baidu.com/images/report/title1.png"  alt="" /></dt>
+            <dd>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r4.png"  alt="" />
+                    <h4>PC网站增速较大 数量较2011年增长29%</h4>
+                    <div style="position:absolute; background:#fff; bottom:40px; left:80px;">
+                        <p>2012年PC端网站数量仍占大多数，数量已达到千万级别。</p>
+                        <p>移动端网站处于快速发展初期，PC无线化速度加快，PC无线化比例达到40%。</p>
+                    </div>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r5.png"  alt="" />
+                    <h4>中国互联网的生态环境较差 优质站点仅占1/4</h4>
+                    <div style="position:absolute; background:#fff; bottom:12px; left:80px; width:580px">
+                        <p>中国互联网生态环境较差，低质站点的比例很高。低质站点的泛滥，对中文互联网网站的运营发展产生的负面影响已越来越严重。</p>
+                        <p>优质网站站长应继续完善、丰富原有站点，满足用户需求。</p>
+                        <p>新站站长挖掘用户新需求，创造优质原创内容，建设原创的优质站点。</p>
+                        <p style="color:#999">* 优质/低质站点综合考量了站点的内容、用户体验等要素。其中优质站点为具有高品质内容，为用户提供独特价值，网站内容得到用户、站长的认可和支持，且具有良好用户体验的网站；低质站点为网站内容大多数为采集页面或具有明显作弊行为的网站。（详细说明可参考百度站长平台资料）</p>
+                    </div>
+                </div>
+            </dd>
+            <dt id="zzReportPart2" class="report-part"> <img src="http://zhanzhang.baidu.com/images/report/title2.png"  alt="" />
+            </dt>
+            <dd>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r6.png"  alt="" />
+                    <h4>优质资源中社交网络及商品类资源占比最高且增速明显</h4>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r7.png"  alt="" />
+                    <h4>商品供求类资源、高质量视频资源及图片资源的需求有明显增长</h4>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r8.png"  alt="" />
+                    <h4>网站页面对搜索引擎友好度不高 80分以上仅占28%</h4>
+                    <div style="position:absolute; background:#fff; bottom:20px; left:80px;">
+                        <p>针对以上问题，为了更好服务站长，百度站长平台在2012年推出了多种站长工具，如外链分析、关键词查询、百度索引量、页面优化建议、sitemap、抓取异常、百度分享等站长工具。</p>
+                        <p style="color:#999">* 友好度衡量包括网站页面对搜索引擎的识别友好度及抓取友好度。 *其他异常包括抓取异常、IP封禁、UA封禁等</p>
+                    </div>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r9.png"  alt="" />
+                    <h4>站长平台提供多种工具帮助网站建设及优化</h4>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r10.png"  alt="" />
+                    <h4>更多优质网站站长通过sitemap主动向百度提交网站数据</h4>
+                    <div style="position:absolute; background:#fff; bottom:58px; left:80px;">
+                        <p>2012年百度sitemap工具共引入30亿优质网页其中有2.3亿网页已为网站带来流量。</p>
+                    </div>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r11.png"  alt="" />
+                    <h4>页面优化建议工具帮助网站大幅提升页面对搜索引擎的友好度</h4>
+                    <div style="position:absolute; background:#fff; bottom:58px; left:80px;">
+                        <p>通过页面优化建议工具，站长对网页进行优化后，网站页面对搜索引擎识别的友好度大幅提升。</p>
+                    </div>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r12.png"  alt="" />
+                    <h4>安装百度分享后网站来自百度搜索的流量平均提升10%</h4>
+                    <div style="position:absolute; background:#fff; bottom:40px; left:80px;">
+                        <p>通过百度分享工具，网站的分享量及来自百度搜索流量均有明显提升。</p>
+                    </div>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r13.png"  alt="" />
+                    <h4>社交网络、休闲娱乐、游戏、新闻媒体、在线视频、在线音乐站点分发了总分享量的56%</h4>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r14.png"  alt="" />
+                    <h4>女性时尚、社交网络、在线音乐等站点内容的社会化传播能力较强</h4>
+                    <div style="position:absolute; background:#fff; bottom:60px; left:80px; color:#999">
+                        <p>* 回流比=回流量/分享量，即1次分享带来的回流次数，可反映社会化分享媒体的传播深度和广度</p>
+                    </div>
+                </div>
+            </dd>
+            <dt id="zzReportPart3" class="report-part"> <img src="http://zhanzhang.baidu.com/images/report/title3.png"  alt="" />
+            </dt>
+            <dd>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r15.png"  alt="" />
+                    <h4>在低质网站中 采集及作弊站点泛滥两种共占比80%</h4>
+                    <div style="position:absolute; background:#fff; bottom:20px; left:80px; width:590px">
+                        <p>采集站、作弊站点*、垃圾无价值站点在整个互联网资源环境中的比例越来越高，且有主导趋势。优质资源的生存空间在不断减小。百度作为中文搜索的领军者会大力加强对建站规范的引导，致力于改善互联网的生态环境。</p>
+                        <p style="color:#999;">* 其中作弊站主要包括存在严重内容型作弊（关键词堆彻穿插等方式）、超链作弊（友链作弊、买卖链接、黑链等方式）、点击作弊及混合多种方式作弊的网站。</p>
+                    </div>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r16.png"  alt="" />
+                    <h4>百度网页搜索在改善互联网生态环境方面进行的算法升级</h4>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r17.png"  alt="" />
+                    <h4>中文互联网网站存在的漏洞问题严重 仅35%的网站处于安全状态</h4>
+                    <div style="position:absolute; background:#fff; bottom:40px; left:80px;">
+                        <p>百度站长平台在2012年下半年推出了<strong style="color:red;">安全检测</strong>工具及<strong style="color:red;">漏洞检测</strong>工具</p>
+                        <p>超过50万的网站进行安全检测及漏洞情况查询</p>
+                        <p>帮助35万的网站及时发现问题</p>
+                    </div>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r18.png"  alt="" />
+                    <h4>73%的网站被黑的类型为植入暗链</h4>
+                    <div style="position:absolute; background:#fff; bottom:60px; left:80px; width:580px">
+                        <p>黑客利用网站的漏洞进行攻击后添加暗链为近几年比较严重的问题，且这种方式更加隐蔽，严重影响搜索引擎对网站质量的评价，并对用户的利益带来更大的安全隐患，站长需要定期进行安全检测。</p>
+                    </div>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r19.png"  alt="" />
+                    <h4>2012年受攻击较多地区多为电信增值业务高度发达地区</h4>
+                    <div style="position:absolute; background:#fff; bottom:55px; left:80px;">
+                        <p>2012年受攻击较多的地区多是电信增值业务高度发达的地区，其中以北京市被攻击占比最高</p>
+                    </div>
+                </div>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r20.png"  alt="" />
+                    <h4>2012年政府机构类网站和购物类网站被攻击的频率最高</h4>
+                </div>
+            </dd>
+            <dt id="zzReportPart4" class="report-part"> <img src="http://zhanzhang.baidu.com/images/report/title4.png"  alt="" />
+            </dt>
+            <dd>
+                <div class="report-img-box"> <img src="http://zhanzhang.baidu.com/images/report/r21.png"  alt="" />
+                </div>
+            </dd>
+            <dt id="zzReportPart5" class="report-part"> <img src="http://zhanzhang.baidu.com/images/report/title5.png"  alt="" />
+            </dt>
+            <dd>
+                <div class="report-img-box">
+                    <div class="report-desc22">
+                        <dl>
+                            <dt>网站需加大原创优质内容建设的力度</dt>
+                            <dd>在所有的PC端网站中，低质网站占比高达75%，其中采集泛滥。因此，希望站长在13年加大原创内容的建设力度。百度站长平台在2013年重点推出星火计划，将重点扶持原创，帮助优质站点，通过原创资源引入以及高级工具扶持原创站点，给原创的优质内容更多展现，让原创网站获得更大的发展空间。</dd>
+                            <dt>内容是基础，SEO仍需高度关注</dt>
+                            <dd>回归理性—规范化的seo方式，扁平的网站结构、规范简单的url、优质的内容等。建立网站推荐体系，互联网信息大爆炸，如何将用户需要的信息推荐到用户眼前是关键；集成社会化网络，随着微博、社交、分享工具等的推出及火爆，搜索引擎会逐步考虑社会化网络因素。</dd>
+                            <dt>网站安全问题突出，急需站长重视</dt>
+                            <dd>重点关注各种开源程序漏洞报告，及时修复，以免被黑客获取权限给网站带来更多的损失。</dd>
+                            <dt>用户对图片的各种需求大幅增长，图片资源也大幅增长，百度会加大对图片资源的应用与合作</dt>
+                            <dd>2012年用户对图片类的需求在高速增长，且互联网中的图片资源也在大幅增长，为了更好的满足用户体验，且将优质的图片资源更好的展现给用户，在2013年百度会加大对图片资源的应用与合作。</dd>
+                        </dl>
+                    </div>
+                </div>
+            </dd>
+            <dt id="zzReportPart6" class="report-part"> <img src="http://zhanzhang.baidu.com/images/report/title6.png"  alt="" />
+            </dt>
+            <dd>
+                <div class="report-img-box">
+                    <div class="report-desc23">
+                        <p>根据2012年用户的需求趋势，休闲娱乐、影视视频相关、游戏类、教育、B2B五大类需求增长迅速且13年仍将占据主导地位，站长在网站运营过程中可综合考虑用户的这几类需求，加强网站的内容建设。</p>
+                        <ul>
+                            <li><strong>休闲娱乐类需求：</strong>主要包括小说、动漫及周边、星座算命、娱乐八卦、网络流行内容等细分需求，其中各种包含图片类需求可重点进行关注。</li>
+                            <li><strong>影视视频相关需求：</strong>主要包括在线视频、视频下载、影评剧评、综艺节目、网络搞笑等细分需求，建议这类网站深入挖掘视频影视人物关系、视频周边等相关信息进行网站内容建设。</li>
+                            <li><strong>游戏类需求：</strong>主要包括单机游戏、游戏下载、页游、装备讨论、攻略等细分需求，且网页游戏需求的增长也是网站内容建设中可去关注的方向。</li>
+                            <li><strong>教育类需求：</strong>主要指用户对教育资源的需求，包括教学课件、作文等，网站在运营过程中可考虑教育类资源的深度整合，为用户提供一条龙的信息服务，这也是目前互联网产品发展的大趋势。</li>
+                            <li><strong>B2B类：</strong>用户需求比较分散，大量个性化需求没有相应的资源，建议B2B类网站深入分析用户需求，并在具体的行业中做细做深，为用户提供可信的优质资源。</li>
+                        </ul>
+                        <p>网站页面的整洁度：目前较多网站的广告形式存在弹窗、大面积广告等严重影响用户阅读的广告，这些会对用户带来严重的体验伤害，建议站长在这些广告上进行控制，保持页面的整洁度及良好的用户体验。</p>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+    </article>
+</section>
+<script type="text/javascript">
+(function(window){
+    var oUl = document.getElementById('ul');
+    var aLi = oUl.getElementsByTagName('li');
+    var oDl = document.getElementById('dllist');
+    var aDt = getByClass(oDl, 'report-part');
+    var viewHeight = document.documentElement.clientHeight || document.body.clientHeight;
+    for(var i = 0; i < aLi.length; i++){
+        aLi[i].index = i;
+        aLi[i].onclick = function(){
+            location.hash = 'zzReportPart' + (this.index + 1);
+        }
+    }
+    var cur;
+    window.onscroll = function(){
+        for(var i = aDt.length - 1; i > 0; i--){
+            if(isView(aDt[i])){
+                break;
+            }
+        }
+        if(cur != i){
+            !cur ? (aLi[0].className = '') : (aLi[cur].className = '');
+            aLi[i].className = 'on';
+            cur = i;
+        }
+    }
+    function isView(elem){
+        return elem.offsetTop - (document.documentElement.scrollTop || document.body.scrollTop) < (viewHeight / 2);
+    }
+    function getByClass(oParent, cls){
+        if(document.getElementsByClassName){
+            return (oParent || document).getElementsByClassName(cls);
+        } else {
+            oParent   = oParent || document;
+            var res   = [],
+                child = null,
+                reg   = new RegExp('(^|\\s)' + cls + '(\\s|$)', 'i');
+            for(var i = 0, len = oParent.all.length; i < len; i ++){
+                child = oParent.all[i];
+                if(reg.test(child.className)){
+                    res.push(child);
+                }
+            }
+            return res;
+        }
+    }
+}(window));
+</script>
+</body>
+</html>
