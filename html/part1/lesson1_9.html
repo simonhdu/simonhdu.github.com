@@ -1,0 +1,69 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type"content="text/html;charset=UTF-8"/>
+<title>有焦点时文字变淡</title>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 12px/1.5 arial;
+    background: #fff;
+}
+.username {
+    position: relative;
+    margin: 30px auto;
+    width: 500px;
+}
+.default {
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    padding: 0 8px;
+    z-index: 1;
+    color: #8B9096;
+    cursor: text;
+}
+.txt {
+    position: relative;
+    height: 35px;
+    padding: 0 6px;
+    border-radius: 5px;
+    line-height: 35px;
+    background: #fff;
+    border: 1px solid #9DADC5;
+}
+</style>
+</head>
+<body>
+<div class="username">
+    <label class="default" id="default" for="txt1">请输入关键字查询</label>
+    <input type="text" name="" id="txt1" class="txt" value="" />
+</div>
+<script type="text/javascript">
+    var oTxt = document.getElementById('txt1');
+    var oDefault = document.getElementById('default');
+    var sOld = oDefault.innerHTML;
+    oTxt.onfocus = function(){
+        oDefault.style.color = '#ccc';
+    }
+    oTxt.onblur = function(){
+        oDefault.style.color = '#8B9096';
+    }
+    oTxt.onpropertychange = oTxt.oninput = toChange;
+    oTxt.value.length > 0 && (oDefault.innerHTML = '');
+    function toChange(){
+        if(oTxt.value.length > 0){
+            oDefault.innerHTML = '';
+        } else {
+            oDefault.innerHTML = sOld;
+            bWrite = false;
+        }
+    }
+</script>
+</body>
+</html>
