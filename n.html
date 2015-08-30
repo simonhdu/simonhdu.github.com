@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>CSS背景色透明</title>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #3f3f3f;
+    font-family: "宋体", Arial;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+img {
+    border: none 0;
+}
+#bos {
+    width: 820px;
+    background: #fff;
+    margin: 0 auto;
+}
+#bos ul {
+    zoom: 1;
+    overflow: hidden;
+    background: #fff;
+    padding: 5px 0 5px 5px;
+}
+#bos ul li {
+    width: 260px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin: 5px;
+    background: #fff;
+}
+.img_wrap {
+    width: 258px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    display: block;
+    overflow: hidden;
+}
+#bos ul li h2 {
+    width: 100%;
+    height: 0px;
+    line-height: 50px;
+    color: #fff;
+    text-indent: 1em;
+    font-size: 14px;
+    font-family: 微软雅黑;
+    position: absolute;
+    bottom: 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#44000000', endColorstr='#44000000');
+    background: rgba(0, 0, 0, .6);
+}
+</style>
+</head>
+<body>
+    <div id="bos">
+    <ul>
+        <li>
+            <a class="img_wrap" href="#"><img src="http://i2.vanclimg.com/users/18/20120824/n1_120824.jpg" alt="" /></a>
+            <h2>网站防诈骗重要提示 购物满59元免运费</h2>
+        </li>
+        <li>
+            <a class="img_wrap" href="#"><img src="http://i1.vanclimg.com/users/18/20120824/r1_120824.jpg" alt="" /></a>
+            <h2>Android客户端升级新体验 配送延误通知</h2>
+        </li>
+        <li>
+            <a class="img_wrap" href="#"><img src="http://i1.vanclimg.com/users/18/20120824/f8_120824.jpg" alt="" /></a>
+            <h2>陈年谈品牌的本分 工行e支付可直减60元</h2>
+        </li>
+        <li>
+            <a class="img_wrap" href="#"><img src="http://i2.vanclimg.com/users/18/20120824/n1_120824.jpg" alt="" /></a>
+            <h2>陈年谈品牌的本分 工行e支付可直减60元</h2>
+        </li>
+        <li>
+            <a class="img_wrap" href="#"><img src="http://i1.vanclimg.com/users/18/20120824/f8_120824.jpg" alt="" /></a>
+            <h2>陈年谈品牌的本分 工行e支付可直减60元</h2>
+        </li>
+        <li>
+            <a class="img_wrap" href="#"><img src="http://i2.vanclimg.com/users/18/20120824/n1_120824.jpg" alt="" /></a>
+            <h2>陈年谈品牌的本分 工行e支付可直减60元</h2>
+        </li>
+    </ul>
+    </div>
+    <script type="text/javascript">
+     var bos = document.getElementById('bos');
+     var lis = bos.getElementsByTagName('li');
+     var len = lis.length;
+     while (len--) {
+         lis[len].onmouseover = function () {
+             over(this.getElementsByTagName('h2')[0]);
+         }
+         lis[len].onmouseout = function () {
+             out(this.getElementsByTagName('h2')[0]);
+         }
+     }
+     function over(obj) {
+         var ypos = 0;
+         if (obj.time) {
+             clearInterval(obj.time)
+         }
+         obj.time = setInterval(function () {
+             if (ypos < 50) {
+                 ypos += Math.ceil((50 - ypos) / 3);
+             }
+             obj.style.height = ypos + "px";
+         }, 25);
+     }
+     function out(obj) {
+         var ypos = 50;
+         if (obj.time) {
+             clearInterval(obj.time)
+         }
+         obj.time = setInterval(function () {
+             if (ypos >= 0) {
+                 ypos -= Math.ceil((ypos - 0) / 3);
+             }
+             obj.style.height = ypos + "px";
+         }, 25);
+     }
+    </script>
+</body>
+</html>
