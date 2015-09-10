@@ -1,6 +1,6 @@
 .wrap {
   position: relative;
-  width: 500px;
+  width: 650px;
   margin: 20px auto 36px;
   padding: 40px 20px;
   font:18px '微软雅黑' sans-serif;
@@ -12,14 +12,7 @@
   background: #fff;
 }
 .wrap span{
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  padding:5px 5px;
-  background: lightblue;
-  border-radius: 10px;
-  font:10px '微软雅黑' sans-serif;
-  cursor: pointer;
+  display: none;
 }
 #showDemo{
   display: none !important;
@@ -41,7 +34,7 @@
   border-bottom: 1px solid #f2f2f2;
 }
 .list li h1 {
-  font: bold normal 20px/1.5 '微软雅黑' sans-serif;
+  font: bold normal 30px/1.5 '微软雅黑' sans-serif;
 }
 .list li h1 a {
   display: block;
@@ -53,7 +46,6 @@
   border-radius: 10px;
 }
 .list li a:hover {
-  text-indent: 20px;
   border-radius: 30px;
   color: #fff;
   text-shadow: 0 2px 1px #360;
@@ -73,7 +65,7 @@
   display: block;
   margin-left: 25px;
   color: #000;
-  font-size: 12px;
-  width: 300px;
+  font: 25px/2.5 '微软雅黑' sans-serif;;
+  width: 400px;
   padding: 0;
 }

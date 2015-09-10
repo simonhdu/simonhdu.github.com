@@ -3,24 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>西蒙的前端作品</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
     <link rel="stylesheet" type="text/css" href="styles/reset.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="styles/main.css" media="screen">
+    <link id="maincss" rel="stylesheet" type="text/css" href="styles/main.css" media="only screen and (min-width:1200px)">
+    <link rel="stylesheet" type="text/css" href="styles/main-minwidth1200.css" media="only screen and (max-width:1200px)">
+    <link rel="stylesheet" type="text/css" href="styles/main-minwidth700.css" media="only screen and (max-width:700px)">
   </head>
   <body>
     <div class="wrap shadow">
         <ol id="ol" class="list">
         </ol>
+        <span>预览版</span>
+    </div>
+    <div class="shadow" id="showDemo">
+        <iframe src="" name="view_frame" width="100%" height="100%" scrolling="auto" frameborder="0"></iframe>
     </div>
     <div class="welcome">
-        © 2015 Powered by simonlau  欢迎交流 Email: simon_ryan@163.com  QQ：1146855071
+        © 2015 Powered by simonlau | 欢迎交流 Email: simon_ryan@163.com |    QQ：1146855071
     </div>
-    <!-- <audio class="audio" src="images/bgm.mp3" autoplay="autoplay" loop="loop" controls="controls"></audio> -->
     <script type="text/javascript">
     var str = '';
     var data = [
             [
-                { title : '第一章 原生JavaScript Demo part1'},
+                { title : '第1章 原生JavaScript Demo part1'},
                 { url : 'html/part1/lesson1_1.html', title : '控制div属性' },
                 { url : 'html/part1/lesson1_2.html', title : '网页换肤' },
                 { url : 'html/part1/lesson1_3.html', title : '函数接收参数并弹出' },
@@ -28,11 +33,10 @@
                 { url : 'html/part1/lesson1_5.html', title : '鼠标移入移出改变样式' },
                 { url : 'html/part1/lesson1_6.html', title : '记住密码提示框' },
                 { url : 'html/part1/lesson1_7.html', title : '获取鼠标坐标' },
-                { url : 'html/part1/lesson1_8.html', title : '单独图片轮换' },
-                { url : 'html/part1/lesson1_9.html', title : '有焦点时文字变淡' }
+                { url : 'html/part1/lesson1_8.html', title : '有焦点时文字变淡' }
             ],
             [
-                { title : '第二章 原生JavaScript Demo part2'},
+                { title : '第2章 原生JavaScript Demo part2'},
                 { url : 'html/part2/lesson2_1.html', title : '输入法' },
                 { url : 'html/part2/lesson2_2.html', title : '点击div，显示其innerHTML' },
                 { url : 'html/part2/lesson2_3.html', title : '求出数组中所有数字的和' },
@@ -47,7 +51,7 @@
                 { url : 'html/part2/lesson2_12.html', title : '复选框' }
             ],
             [
-                { title : '第三章 原生JavaScript Demo part3'},
+                { title : '第3章 原生JavaScript Demo part3'},
                 { url : 'html/part3/lesson3_1.html', title : '用typeof查看数据类型' },
                 { url : 'html/part3/lesson3_2.html', title : '用parseInt解析数字并求和' },
                 { url : 'html/part3/lesson3_3.html', title : '累加按钮' },
@@ -61,7 +65,7 @@
                 { url : 'html/part3/lesson3_11.html', title : '数字倒数效果' }
             ],
             [
-                { title : '第四章 原生JavaScript Demo part4'},
+                { title : '第4章 原生JavaScript Demo part4'},
                 { url : 'html/part4/lesson4_1.html', title : 'setTimeout应用' },
                 { url : 'html/part4/lesson4_2.html', title : '轮播头图' },
                 { url : 'html/part4/lesson4_3.html', title : '轮播头图-改变方向' },
@@ -74,20 +78,25 @@
                 { url : 'html/part4/lesson4_10.html', title : '模拟搜索结果项' }
             ],
             [
-                { title : '第五章 京东JD.com 仿站'},
+                { title : '第5章 京东JD.com 仿站'},
                 { url : 'html/part5/index.html',    title : '京东JD.com 首页模仿' },
             ],
             [
-                { title : '第六章 网页风格'},
+                { title : '第6章 网页风格'},
                 { url : 'html/part6/fullscreen-sroll.html', title : '厅客首页 全屏滚动' },
                 { url : 'html/part6/bar-scroll.html',       title : '滚动菜单标记' },
                 { url : 'html/part6/secondary-menu.html',   title : '二级下拉菜单' },
                 { url : 'html/part6/weibo.html',            title : '微博 (左图右文&微博置顶)' }
             ],
             [
-                { title : '第七章 网站界面风格'},
-                { url : 'html/part7/login.html', title : '经典黑色界面 from豪情' },
+                { title : '第7章 网站界面风格'},
+                { url : 'html/part7/login.html', title : '经典黑色界面 from豪情' }
+            ],
+            [
+                { title : '第8章 其他'},
+                { url : 'html/part8/lesson8-1.html', title : 'CSS动画-旋转的盒子' }
             ]
+
         ];
     for(var i = 0; i < data.length; i++){
         var items = data[i];
@@ -105,12 +114,18 @@
         }
         str += sub;
     }
+    //预览版
+    var oShowDiv = document.getElementById("showDemo");
+    var oiframe = oShowDiv.getElementsByTagName("iframe")[0];
     var ol = document.getElementById('ol');
     ol.innerHTML = str;
     var h1 = ol.getElementsByTagName('h1');
     var dl = ol.getElementsByTagName('dl');
     var tmp = -1;
     var open = false;
+    var oCSS=document.getElementById("maincss");
+    var oSpan=document.getElementsByTagName("span")[0];
+    var oLinks=ol.getElementsByTagName("a");
     for(var i=0; i < h1.length; i++){
         h1[i].index = i;
         h1[i].onclick = function(){
@@ -122,9 +137,18 @@
                 open = false;
             } else {
                 dl[this.index].style.display = 'block';
+                oShowDiv.style.display = 'block';
                 open = true;
             }
             tmp = this.index;
+        }
+    }
+    oSpan.onclick = function(){
+        oCSS["href"]="styles/main-preview.css";
+        oSpan.style.display = 'none';
+        oShowDiv.style.display = 'none';
+        for(var i=0; i<oLinks.length; i++){
+            oLinks[i].target="view_frame";
         }
     }
     </script>

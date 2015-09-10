@@ -8,7 +8,7 @@
 			font: 12px/1.5 Tahoma;
 		}
 		#outer{
-			width: 300px;
+			width: 260px;
 			margin: 0 auto;
 		}
 		p{
@@ -32,7 +32,7 @@
 			height: 180px;
 			background: #000;
 			padding: 10px;
-			margin: 0 auto;
+			margin:0 auto;
 		}
 	</style>
 	<script type="text/javascript">
@@ -47,7 +47,7 @@
 				changeStyle(oDiv,oInput[0].value,oInput[1].value);
 			}
 			oBtn[1].onclick=function(){
-				oDiv.removeAttribute("style");
+				oDiv.style.cssText="";
 			}
 		}
 	</script>
@@ -67,7 +67,6 @@
 			<button>确定</button>
 			<button>重置</button>
 		</p>
-		
 	</div>
 	<div id="div1">
 		在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。

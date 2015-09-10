@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>控制div属性</title>
 </head>
 <style type="text/css">
-	   *{
+	  *{
 			margin: 0 auto;
 		}
 		#rect{
@@ -34,9 +34,11 @@
 			oBtn[i].index = i;
 			oBtn[i].onclick = function ()
 			{
-				this.index == oBtn.length - 1 && (oDiv.style.cssText = "");  ////这里的this代表当前的btn，当this.index等于4时，后面的oDiv.style.cssText = ""这句会执行。清空js改动的样式
+				if(this.index == oBtn.length - 1){
+					oDiv.style.cssText = "";
+				}
 				changeStyle(oDiv, oAttr[this.index], oVal[this.index])
-			}	
+			}
 		}
 	}
 </script>
@@ -50,6 +52,6 @@
 	</div>
 	<div id="rect">
 	</div>
-	
+
 </body>
 </html>

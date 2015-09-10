@@ -34,7 +34,7 @@
 			}
 			oBtn.onclick=function(){
 				var sum=0;
-				var oInputNumber=document.getElementsByTagName("input")[0].value.split(",");
+				var oInputNumber=oInput.value.split(",");
 				for(var i in oInputNumber)
 					sum += parseInt(oInputNumber[i]);
 				oSum.innerHTML=sum;
@@ -47,10 +47,10 @@
 		<label>
 			<input type="text" value="1,2,3,4,5,6,7,8,9,10">
 			<span>输入数字求和，数字之间用半角","号分隔</span>
-		</label>	
+		</label>
 		<p>
 			<button>求和</button>
-		</p>		
+		</p>
 		<span id="sum"></span>
 	</div>
 </body>
