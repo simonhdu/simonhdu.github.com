@@ -16,10 +16,15 @@
   bottom: 5px;
   right: 5px;
   padding:5px 5px;
-  background: lightblue;
+  background: blue;
+  opacity: 0.5;
+  color:#fff;
   border-radius: 10px;
   font:10px '微软雅黑' sans-serif;
   cursor: pointer;
+}
+.wrap span:hover{
+  opacity: 0.8;
 }
 #showDemo{
   display: none !important;

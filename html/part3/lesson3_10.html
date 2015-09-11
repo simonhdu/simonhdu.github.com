@@ -12,19 +12,6 @@ body {
     font: 12px/1.125 Arial, Helvetica, sans-serif;
     background: #fff;
 }
-a:focus, input, textarea {
-    outline-style: none;
-}
-a {
-    color: #0a8cd2;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-.none {
-    display: none
-}
 .demo {
     height: 2000px;
 }
@@ -37,10 +24,8 @@ a:hover {
     font-size: 12px;
     text-align: center;
     position: fixed;
-    _position: absolute;
     right: 0px;
     bottom: 100px;
-    _bottom: "auto";
     cursor: pointer;
     opacity: 0.6;
     filter: Alpha(opacity=60);
@@ -57,10 +42,9 @@ a:hover {
 <body>
 <div class="demo"></div>
 <script type="text/javascript">
-    (function(){
+    window.onload=function(){
         function viewSize(){
-            var doc = document,
-                    de = doc.documentElement;
+            var doc = document, de = doc.documentElement;
             return {
                 'width': (window.innerWidth || (de && de.clientWidth) || doc.body.clientWidth),
                 'height': (window.innerHeight || (de && de.clientHeight) || doc.body.clientHeight)
@@ -79,14 +63,8 @@ a:hover {
             document.body.appendChild(btn);
         }
         apendScroll();
-        function ie6Top(){
-            if(!window.XMLHttpRequest){
-                btn.style.top = getScrollTop() + viewSize().height - 200 + 'px';
-            }
-        }
         window.onscroll = function(){
             btn.style.display = getScrollTop() > 0 ? 'block' : 'none';
-            ie6Top();
         }
         btn.onclick = function(){
             timer = setInterval(function(){
@@ -95,11 +73,10 @@ a:hover {
                 if(scrollTop == 0){
                     clearInterval(timer);
                 }
-                ie6Top();
                 document.documentElement.scrollTop = document.body.scrollTop = scrollTop + iSpeed;
             }, 30);
         }
-    }());
+    };
 </script>
 </body>
 </html>

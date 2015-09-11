@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 <head>
 <meta http-equiv="Content-Type"content="text/html;charset=UTF-8"/>
 <title>数字倒数效果</title>
@@ -48,7 +48,7 @@ body {
             last       = 0,  // 最终值
             n          = 0;  // 需要填充的空白0
         if(addFixed < emTotal){ // 跳出setTimeout条件
-            addFixed  += Math.ceil((emTotal - addFixed) / 3);
+            addFixed  += Math.ceil((emTotal - addFixed) / 30);
             len        = emTotal.length - (addFixed + '').length;
             last       = n + '' + addFixed;
             n          = '0'.repeat(10).slice(len);
@@ -59,7 +59,7 @@ body {
             last = '<strong>' + last.join('</strong><strong>') + '</strong>';
             node.innerHTML = last;
         }
-        setTimeout(numAnim, 100);
+        setTimeout(numAnim, 30);
     }
     node.style.display = 'block';
     numAnim();

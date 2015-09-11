@@ -43,16 +43,16 @@
 	<script type="text/javascript">
 		window.onload = function ()
 		{
-			var oA = document.getElementsByTagName("a")[0];	
+			var oA = document.getElementsByTagName("a")[0];
 			var oInput = document.getElementsByTagName("input");
 			var oLabel = document.getElementsByTagName("label")[0];
 			var isCheckAll = function ()
 			{
 				for (var i = 1, n = 0; i < oInput.length; i++)
 				{
-					oInput[i].checked && n++	
+					oInput[i].checked && n++;
 				}
-				oInput[0].checked = n == oInput.length - 1;
+				oInput[0].checked = (n == oInput.length - 1);
 				oLabel.innerHTML = oInput[0].checked ? "全不选" : "全选"
 			};
 			//全选/全不选
@@ -60,9 +60,9 @@
 			{
 				for (var i = 1; i < oInput.length; i++)
 				{
-					oInput[i].checked = this.checked			
+					oInput[i].checked = this.checked
 				}
-				isCheckAll()
+				isCheckAll();
 			};
 			//反选
 			oA.onclick = function ()
@@ -71,16 +71,16 @@
 				{
 					oInput[i].checked = !oInput[i].checked
 				}
-				isCheckAll()
+				isCheckAll();
 			};
 			//根据复选个数更新全选框状态
 			for (var i = 1; i < oInput.length; i++)
 			{
 				oInput[i].onclick = function ()
 				{
-					isCheckAll()
-				}	
-			}	
+					isCheckAll();
+				}
+			}
 		}
 	</script>
 </head>
@@ -98,7 +98,7 @@
 	        <p><input type="checkbox" name="item"><label>选项（八）</label></p>
 	        <p><input type="checkbox" name="item"><label>选项（九）</label></p>
 	        <p><input type="checkbox" name="item"><label>选项（十）</label></p>
-	    </dd>    
+	    </dd>
 	</dl>
 	<center>1、切换全选/全不选文字；2、根据选中个数更新全选框状态；</center>
 </body>
