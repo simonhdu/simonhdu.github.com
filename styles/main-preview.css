@@ -6,22 +6,29 @@
   padding: 20px 0 20px;
   font:18px '微软雅黑' sans-serif;
   margin-bottom: 36px;
+  -webkit-animation: boxmoving 1.5s ease-out both;
+}
+
+@-webkit-keyframes boxmoving{
+  0%{
+    top:20px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 500px;
+    padding: 40px 20px;
+  }
+  100%{
+    top:20px;
+    left: 20px;
+    width: 400px;
+    padding: 20px 0 20px;
+  }
 }
 .shadow {
   border: 2px solid #e6e6e6;
   border-radius: 5px;
   box-shadow: 3px 5px 5px #ececec;
   background: #fff;
-}
-.wrap span{
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  padding:5px 5px;
-  background: lightgray;
-  border-radius: 10px;
-  font:10px '微软雅黑' sans-serif;
-  cursor: pointer;
 }
 #showDemo{
   position: fixed;
@@ -40,6 +47,15 @@
 }
 .list {
   padding: 0 15px;
+  -webkit-animation: listpadding 1.5s ease-out both;
+}
+@-webkit-keyframes listpadding{
+  0%{
+    padding: 0 50px;
+  }
+  100%{
+    padding: 0 15px;
+  }
 }
 .list li {
   list-style: none;

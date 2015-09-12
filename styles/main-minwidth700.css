@@ -1,6 +1,6 @@
 .wrap {
   position: relative;
-  width: 650px;
+  width:500px;
   margin: 20px auto 36px;
   padding: 40px 20px;
   font:18px '微软雅黑' sans-serif;
@@ -34,7 +34,7 @@
   border-bottom: 1px solid #f2f2f2;
 }
 .list li h1 {
-  font: bold normal 30px/1.5 '微软雅黑' sans-serif;
+  font: bold normal 20px/1.5 '微软雅黑' sans-serif;
 }
 .list li h1 a {
   display: block;
@@ -65,7 +65,7 @@
   display: block;
   margin-left: 25px;
   color: #000;
-  font: 25px/2.5 '微软雅黑' sans-serif;;
-  width: 400px;
+  font: 15px/2 '微软雅黑' sans-serif;;
+  width: 300px;
   padding: 0;
 }
