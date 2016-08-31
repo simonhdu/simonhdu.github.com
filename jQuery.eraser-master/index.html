@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name='HandheldFriendly' content='True'/>
+    <meta name='viewport' content='user-scalable=0'/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>刮刮乐</title>
+    <style type="text/css">
+        * {
+            -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+            -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+            /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+            /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
+        }
+        body {
+            background: #FFF;
+            color: #000;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            font-family: Helvetica, Arial;
+        }
+        .container {
+            margin: 50px auto 0;
+            position: relative;
+            display: inline-block;
+            width: 702px;
+            height: 290px;
+        }
+
+        #cover {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 2;
+        }
+        #result {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+    </style>
+    <script src='http://static.superboss.cc/newweb/js/dev/jquery-1.10.2.min.js' type='text/javascript'></script>
+    <script src='jquery.eraser.js' type='text/javascript'></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#cover').eraser({
+                progressFunction: function (p) {
+                    if (p * 100 >= 35) {
+                        $('#cover').eraser('clear');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <img id="result" src="img/back.png"/>
+    <img id="cover" src="img/cover.png"/>
+</div>
+</body>
+
+</html>
