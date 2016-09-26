@@ -1,122 +1,125 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>西蒙的前端作品 by simonlau</title>
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
     <link rel="stylesheet" type="text/css" href="styles/reset.css" media="screen">
-    <link id="maincss" rel="stylesheet" type="text/css" href="styles/main.css" media="only screen and (min-width:1200px)">
-    <link rel="stylesheet" type="text/css" href="styles/main-minwidth1200.css" media="only screen and (max-width:1200px)">
+    <link id="maincss" rel="stylesheet" type="text/css" href="styles/main.css"
+          media="only screen and (min-width:1200px)">
+    <link rel="stylesheet" type="text/css" href="styles/main-minwidth1200.css"
+          media="only screen and (max-width:1200px)">
     <link rel="stylesheet" type="text/css" href="styles/main-minwidth700.css" media="only screen and (max-width:700px)">
     <link rel="stylesheet" type="text/css" href="jquery-2.1.3.js">
-  </head>
-  <body>
-    <div class="wrap shadow">
-        <ol id="ol" class="list">
-        </ol>
-        <span>进入预览模式</span>
-    </div>
-    <div class="shadow" id="showDemo">
-        <iframe src="" name="view_frame" width="100%" height="100%" scrolling="auto" frameborder="0"></iframe>
-    </div>
-    <div class="welcome">
-        © 2015 Powered by simonlau | 欢迎交流 Email: simon_ryan@163.com |    QQ：1146855071
-    </div>
-    <script type="text/javascript">
+</head>
+<body>
+<div class="wrap shadow">
+    <ol id="ol" class="list">
+    </ol>
+    <span>进入预览模式</span>
+</div>
+<div class="shadow" id="showDemo">
+    <iframe src="" name="view_frame" width="100%" height="100%" scrolling="auto" frameborder="0"></iframe>
+</div>
+<div class="welcome">
+    © 2015 Powered by simonlau | 欢迎交流 Email: simon_ryan@163.com | QQ：1146855071
+</div>
+<script type="text/javascript">
     var str = '';
     var data = [
-            [
-                { title : '第1章 原生JavaScript Demo part1'},
-                { url : 'html/part1/lesson1_1.html', title : '控制div属性' },
-                { url : 'html/part1/lesson1_2.html', title : '网页换肤' },
-                { url : 'html/part1/lesson1_3.html', title : '函数接收参数并弹出' },
-                { url : 'html/part1/lesson1_4.html', title : '用循环改变div颜色' },
-                { url : 'html/part1/lesson1_5.html', title : '鼠标移入移出改变样式' },
-                { url : 'html/part1/lesson1_6.html', title : '记住密码提示框' },
-                { url : 'html/part1/lesson1_7.html', title : '获取鼠标坐标' },
-                { url : 'html/part1/lesson1_8.html', title : '有焦点时文字变淡' }
-            ],
-            [
-                { title : '第2章 原生JavaScript Demo part2'},
-                { url : 'html/part2/lesson2_1.html', title : '输入法' },
-                { url : 'html/part2/lesson2_2.html', title : '点击div，显示其innerHTML' },
-                { url : 'html/part2/lesson2_3.html', title : '求出数组中所有数字的和' },
-                { url : 'html/part2/lesson2_4.html', title : '弹出层效果' },
-                { url : 'html/part2/lesson2_5.html', title : '函数传参，改变div属性' },
-                { url : 'html/part2/lesson2_6.html', title : '图片列表：移入移出改变图片透明度' },
-                { url : 'html/part2/lesson2_7.html', title : '简易版选项卡' },
-                { url : 'html/part2/lesson2_8.html', title : '简易版JS年历' },
-                { url : 'html/part2/lesson2_9.html', title : '播放列表的收缩' },
-                { url : 'html/part2/lesson2_10.html', title : '提示框效果' },
-                { url : 'html/part2/lesson2_11.html', title : '鼠标移过，改变图片路径' },
-                { url : 'html/part2/lesson2_12.html', title : '复选框' }
-            ],
-            [
-                { title : '第3章 原生JavaScript Demo part3'},
-                { url : 'html/part3/lesson3_1.html', title : '用typeof查看数据类型' },
-                { url : 'html/part3/lesson3_2.html', title : '用parseInt解析数字并求和' },
-                { url : 'html/part3/lesson3_3.html', title : '累加按钮' },
-                { url : 'html/part3/lesson3_4.html', title : '输入数字，比较大小' },
-                { url : 'html/part3/lesson3_5.html', title : '页面加载后累加' },
-                { url : 'html/part3/lesson3_6.html', title : '判断数字是否为两位数' },
-                { url : 'html/part3/lesson3_7.html', title : '网页计算器' },
-                { url : 'html/part3/lesson3_8.html', title : '简易版网页时钟' },
-                { url : 'html/part3/lesson3_9.html', title : '倒计时时钟' },
-                { url : 'html/part3/lesson3_10.html', title : '回到顶部' },
-                { url : 'html/part3/lesson3_11.html', title : '数字倒数效果' }
-            ],
-            [
-                { title : '第4章 原生JavaScript Demo part4'},
-                { url : 'html/part4/lesson4_1.html', title : 'setTimeout应用' },
-                { url : 'html/part4/lesson4_2.html', title : '轮播头图' },
-                { url : 'html/part4/lesson4_3.html', title : '轮播头图-改变方向' },
-                { url : 'html/part4/lesson4_4.html', title : 'arguments应用-求出函数参数的总和' },
-                { url : 'html/part4/lesson4_5.html', title : 'CSS函数-设置/读取对象属性' },
-                { url : 'html/part4/lesson4_6.html', title : '当前输入框高亮' },
-                { url : 'html/part4/lesson4_7.html', title : '数组练习：各种数组方法的使用' },
-                { url : 'html/part4/lesson4_8.html', title : '试件练习：封装兼容性添加、删除事件' },
-                { url : 'html/part4/lesson4_9.html', title : '星级评分系统' },
-                { url : 'html/part4/lesson4_10.html', title : '模拟搜索结果项' },
-                { url : 'html/part4/lesson4_11.html', title : 'HTML5 拖拽图片' }
-            ],
-            [
-                { title : '第5章 京东JD.com 仿站'},
-                { url : 'html/part5/index.html',    title : '京东JD.com 首页模仿' },
-            ],
-            [
-                { title : '第6章 网页风格'},
-                { url : 'html/part6/fullscreen-sroll.html', title : '厅客首页 全屏滚动' },
-                { url : 'html/part6/bar-scroll.html',       title : '滚动菜单标记' },
-                { url : 'html/part6/secondary-menu.html',   title : '二级下拉菜单' },
-                { url : 'html/part6/weibo.html',            title : '微博 (左图右文&微博置顶)' },
-                { url : 'html/part6/圣杯布局.html',            title : '圣杯布局' }
-            ],
-            [
-                { title : '第7章 网站界面风格'},
-                { url : 'html/part7/login.html', title : '经典黑色界面 from豪情' }
-            ],
-            [
-                { title : '第8章 其他'},
-                { url : 'html/part8/lesson8-1.html', title : 'CSS动画-旋转的盒子' }
-            ],
-            [
-                { title : '第9章 demo'},
-                { url : 'lucky-card-master/demo.html', title : '刮刮卡' },
-                { url : 'jQuery.eraser-master/index.html', title : '刮刮乐' }
-            ]
+        [
+            {title: '第1章 原生JavaScript Demo part1'},
+            {url: 'html/part1/lesson1_1.html', title: '控制div属性'},
+            {url: 'html/part1/lesson1_2.html', title: '网页换肤'},
+            {url: 'html/part1/lesson1_3.html', title: '函数接收参数并弹出'},
+            {url: 'html/part1/lesson1_4.html', title: '用循环改变div颜色'},
+            {url: 'html/part1/lesson1_5.html', title: '鼠标移入移出改变样式'},
+            {url: 'html/part1/lesson1_6.html', title: '记住密码提示框'},
+            {url: 'html/part1/lesson1_7.html', title: '获取鼠标坐标'},
+            {url: 'html/part1/lesson1_8.html', title: '有焦点时文字变淡'}
+        ],
+        [
+            {title: '第2章 原生JavaScript Demo part2'},
+            {url: 'html/part2/lesson2_1.html', title: '输入法'},
+            {url: 'html/part2/lesson2_2.html', title: '点击div，显示其innerHTML'},
+            {url: 'html/part2/lesson2_3.html', title: '求出数组中所有数字的和'},
+            {url: 'html/part2/lesson2_4.html', title: '弹出层效果'},
+            {url: 'html/part2/lesson2_5.html', title: '函数传参，改变div属性'},
+            {url: 'html/part2/lesson2_6.html', title: '图片列表：移入移出改变图片透明度'},
+            {url: 'html/part2/lesson2_7.html', title: '简易版选项卡'},
+            {url: 'html/part2/lesson2_8.html', title: '简易版JS年历'},
+            {url: 'html/part2/lesson2_9.html', title: '播放列表的收缩'},
+            {url: 'html/part2/lesson2_10.html', title: '提示框效果'},
+            {url: 'html/part2/lesson2_11.html', title: '鼠标移过，改变图片路径'},
+            {url: 'html/part2/lesson2_12.html', title: '复选框'}
+        ],
+        [
+            {title: '第3章 原生JavaScript Demo part3'},
+            {url: 'html/part3/lesson3_1.html', title: '用typeof查看数据类型'},
+            {url: 'html/part3/lesson3_2.html', title: '用parseInt解析数字并求和'},
+            {url: 'html/part3/lesson3_3.html', title: '累加按钮'},
+            {url: 'html/part3/lesson3_4.html', title: '输入数字，比较大小'},
+            {url: 'html/part3/lesson3_5.html', title: '页面加载后累加'},
+            {url: 'html/part3/lesson3_6.html', title: '判断数字是否为两位数'},
+            {url: 'html/part3/lesson3_7.html', title: '网页计算器'},
+            {url: 'html/part3/lesson3_8.html', title: '简易版网页时钟'},
+            {url: 'html/part3/lesson3_9.html', title: '倒计时时钟'},
+            {url: 'html/part3/lesson3_10.html', title: '回到顶部'},
+            {url: 'html/part3/lesson3_11.html', title: '数字倒数效果'}
+        ],
+        [
+            {title: '第4章 原生JavaScript Demo part4'},
+            {url: 'html/part4/lesson4_1.html', title: 'setTimeout应用'},
+            {url: 'html/part4/lesson4_2.html', title: '轮播头图'},
+            {url: 'html/part4/lesson4_3.html', title: '轮播头图-改变方向'},
+            {url: 'html/part4/lesson4_4.html', title: 'arguments应用-求出函数参数的总和'},
+            {url: 'html/part4/lesson4_5.html', title: 'CSS函数-设置/读取对象属性'},
+            {url: 'html/part4/lesson4_6.html', title: '当前输入框高亮'},
+            {url: 'html/part4/lesson4_7.html', title: '数组练习：各种数组方法的使用'},
+            {url: 'html/part4/lesson4_8.html', title: '试件练习：封装兼容性添加、删除事件'},
+            {url: 'html/part4/lesson4_9.html', title: '星级评分系统'},
+            {url: 'html/part4/lesson4_10.html', title: '模拟搜索结果项'},
+            {url: 'html/part4/lesson4_11.html', title: 'HTML5 拖拽图片'}
+        ],
+        [
+            {title: '第5章 京东JD.com 仿站'},
+            {url: 'html/part5/index.html', title: '京东JD.com 首页模仿'},
+        ],
+        [
+            {title: '第6章 网页风格'},
+            {url: 'html/part6/fullscreen-sroll.html', title: '厅客首页 全屏滚动'},
+            {url: 'html/part6/bar-scroll.html', title: '滚动菜单标记'},
+            {url: 'html/part6/secondary-menu.html', title: '二级下拉菜单'},
+            {url: 'html/part6/weibo.html', title: '微博 (左图右文&微博置顶)'},
+            {url: 'html/part6/圣杯布局.html', title: '圣杯布局'}
+        ],
+        [
+            {title: '第7章 网站界面风格'},
+            {url: 'html/part7/login.html', title: '经典黑色界面 from豪情'}
+        ],
+        [
+            {title: '第8章 其他'},
+            {url: 'html/part8/lesson8-1.html', title: 'CSS动画-旋转的盒子'}
+        ],
+        [
+            {title: '第9章 demo'},
+            {url: 'lucky-card-master/demo.html', title: '刮刮卡'},
+            {url: 'jQuery.eraser-master/index.html', title: '刮刮乐'},
+            {url: 'html/index.html', title: '深圳市东恒盛投资集团'}
+        ]
 
-        ];
-    for(var i = 0; i < data.length; i++){
+    ];
+    for (var i = 0; i < data.length; i++) {
         var items = data[i];
         var sub = '';
-        for(var j=0; j<items.length; j++){
+        for (var j = 0; j < items.length; j++) {
             var son = items[j];
-            if(j == 0){
+            if (j == 0) {
                 sub += '<li><h1><a href="javascript:;" title="' + son.title + '">' + son.title + '</a></h1><dl class="sub-dl">';
             } else {
                 sub += '<dd><a href="' + son.url + '" target="_blank" title="' + son.title + '">' + son.title + '</a></dd>';
             }
-            if(j == items.length - 1){
+            if (j == items.length - 1) {
                 sub += '</dl></li>';
             }
         }
@@ -131,16 +134,16 @@
     var dl = ol.getElementsByTagName('dl');
     var tmp = -1;
     var open = false;
-    var oCSS=document.getElementById("maincss");
-    var oSpan=document.getElementsByTagName("span")[0];
-    var oLinks=ol.getElementsByTagName("a");
-    for(var i=0; i < h1.length; i++){
+    var oCSS = document.getElementById("maincss");
+    var oSpan = document.getElementsByTagName("span")[0];
+    var oLinks = ol.getElementsByTagName("a");
+    for (var i = 0; i < h1.length; i++) {
         h1[i].index = i;
-        h1[i].onclick = function(){
-            for(var i=0; i<h1.length; i++){
+        h1[i].onclick = function () {
+            for (var i = 0; i < h1.length; i++) {
                 dl[i].style.display = 'none';
             }
-            if(tmp == this.index && open){
+            if (tmp == this.index && open) {
                 dl[this.index].style.display = 'none';
                 open = false;
             } else {
@@ -151,15 +154,15 @@
             tmp = this.index;
         }
     }
-    oSpan.onclick = function(){
-        oCSS["href"]="styles/main-preview.css";
+    oSpan.onclick = function () {
+        oCSS["href"] = "styles/main-preview.css";
         oSpan.style.display = 'none';
         oShowDiv.style.display = 'none';
-        for(var i=0; i<oLinks.length; i++){
-            oLinks[i].target="view_frame";
+        for (var i = 0; i < oLinks.length; i++) {
+            oLinks[i].target = "view_frame";
         }
     }
-    </script>
-  </body>
+</script>
+</body>
 </html>
 
