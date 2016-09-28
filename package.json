@@ -1,0 +1,31 @@
+{
+  "name": "qn-wd-data-mobile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.superboss.cc/yanjunqinag/qn-wd-data-mobile.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-if": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-rename": "^1.2.2",
+    "path": "^0.12.7",
+    "sprity": "^1.0.8",
+    "sprity-less": "^1.0.3"
+  },
+  "dependencies": {
+    "open": "0.0.5"
+  }
+}

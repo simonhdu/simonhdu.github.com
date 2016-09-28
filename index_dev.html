@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="J_w1200">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>深圳东恒盛投资集团</title>
+  <link rel="stylesheet" href="./resources/css/css.combine.css">
+  <script src="./resources/js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="./framework/js/tatami.onpageload.min.js"></script>
+</head>
+<body>
+<div id="J_page">
+</div>
+
+<script>
+  (function (rc) {
+    var sourceList = [
+      "./resources/js/component.min.js",
+      "./resources/js/jqueryPlugins/jquery.plugins.min.js",
+      "./conf/mock_fe.js",
+      "./framework/js/tatami.framework.js",
+      {
+        depend: ["./conf/mock_fe.js", "framework/js/tatami.framework.js"],
+        path: "./conf/api.js"
+      },
+      {
+        depend: ["./conf/api.js"],
+        path: "conf/route.conf.js"
+      },
+      {
+        depend: ["conf/route.conf.js"],
+        path: "./static/modules.min.js"
+      }
+    ];
+
+    rc.onpageload({
+      default_url: "#/index/",
+      resources: sourceList,
+      call_keys: {
+        // "event=tradeDetail":"#/order/detail/?tid={{tid}}",
+        // "event=event_tradeDetail":"#/order/detail/?tid={{tid}}",  //消息中心进详情，ios下从聊天窗口进来是event_tradeDetail
+      },
+      local_data_keys: ["authString::authString"],
+      before_load: function (next, opl) {
+        next && next();
+      },
+      complete: function (next) {
+        next && next();
+        setTimeout(function () {
+          Tatami.init({
+            plugins: {
+              // 请求的头文件
+              reqHeaders: {},
+              notis: {
+                showLoading: function (txt, time) {
+                  Tatami.showLoading(txt || "请稍等，正在加载中...");
+                },
+                showWarnning: function (txt, time) {
+                  Tatami.toast(txt || "");
+                },
+                showSuccess: function (txt, time) {
+                  //Tatami.showSuccess(txt || "");
+                },
+                showFail: function (txt, time) {
+                  //Tatami.showWarn(txt || "")
+                },
+                clearShow: function () {
+                  Tatami.clearShow();
+                }
+              }
+            },
+            apiList: window.API,
+            route: window.ROUTE,
+            url: location.href
+          });
+        }, 10);
+      }
+    }, location.href);
+
+  })(window.Tatami);
+</script>
+</body>
+</html>
