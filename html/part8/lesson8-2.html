@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>iscroll框架-absolute布局</title>
+    <style>
+        *{padding:0;margin:0;}
+        body{font-family:Microsoft YaHei;background-color:#F2F2F2;}
+        .main > p{padding: 0 10px;height: 40px;line-height: 40px;border-bottom: 1px solid #ccc;border-top: 1px solid #fff;font-size: 14px;}
+
+        html,body{height:100%;}
+        .wrap{width:100%;}
+        .header,.footer{height:40px;line-height:40px;background-color:#D8D8D8;text-align:center;}
+        .header{position: absolute;top:0;left:0;width:100%;}
+        .footer{position: absolute;bottom:0;left:0;width:100%;}
+        .main{position:absolute;z-index:1;top:40px;left:0;bottom:40px;width:100%;}
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {/* IE10兼容 */
+            .iscroll{overflow:scroll;}
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="wrap">
+    <div class="header">header区域</div>
+    <div class="main" id="iscroll"><!-- iscroll父节点，JS控制 -->
+        <div><!-- iscroll唯一子节点 -->
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+            <p> iscroll滚动区域，高度自动适应</p>
+        </div>
+    </div>
+    <div class="footer">footer区域</div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript" src="http://cubiq.org/dropbox/iscroll4/src/iscroll.js?v4"></script>
+<script>
+    var myscroll;
+    function loaded(){
+        myscroll=new iScroll("iscroll");
+    }
+    window.addEventListener("DOMContentLoaded",loaded,false);
+</script>
+
